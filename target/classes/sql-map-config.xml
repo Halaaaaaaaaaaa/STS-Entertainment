@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	<properties resource="database.properties">
+	</properties>
+	<typeAliases>
+		<typeAlias type="com.ezen.biz.dto.MemberVO" alias="Member"/>
+		<typeAlias type="com.ezen.biz.dto.AdminVO" alias="Admin"/>
+		<typeAlias type="com.ezen.biz.dto.BookingVO" alias="Booking"/>
+		<typeAlias type="com.ezen.biz.dto.OrderVO" alias="Order"/>
+		<typeAlias type="com.ezen.biz.dto.ReviewVO" alias="Review"/>
+		<typeAlias type="com.ezen.biz.dto.NoticeVO" alias="Notice"/>
+		<typeAlias type="com.ezen.biz.dto.Total_entVO" alias="total_ent"/>
+		<typeAlias type="com.ezen.biz.dto.Review_Total_entVO" alias="review_total_ent"/>
+		<typeAlias type="com.ezen.biz.dto.Booking_Total_entVO" alias="booking_total_ent"/>
+		<typeAlias type="com.ezen.biz.dto.CsVO" alias="Cs"/>
+	</typeAliases>
+	<!-- sql 매핑 파일 등록 -->
+	<mappers>
+		<mapper resource="mappings/member-mapping.xml"/>
+		<mapper resource="mappings/admin-mapping.xml"/>
+		<mapper resource="mappings/booking-mapping.xml"/>
+		<mapper resource="mappings/order-mapping.xml"/>
+		<mapper resource="mappings/review-mapping.xml"/>
+		<mapper resource="mappings/notice-mapping.xml"/>
+		<mapper resource="mappings/total_ent-mapping.xml"/>
+		<mapper resource="mappings/cs-mapping.xml"/>
+	</mappers>
+</configuration>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="CsMapper" >
+
+	<!-- 고객센터 문의 작성  -->
+	<insert id="insertCS">
+		INSERT INTO cs
+		VALUES (cseq.NEXTVAL, #{id}, #{name}, #{email}, #{coption}, #{ctitle}, #{ccontent}, '답변대기', sysdate)
+	</insert>
+	
+	<!-- 문의사항 list -->
+	<select id="csList" resultType="Cs">
+		SELECT * FROM cs
+		WHERE id=#{id}
+		ORDER BY cseq
+	</select>
+	
+	<!-- 문의사항 list -->
+	<select id="csDetail" resultType="Cs">
+		SELECT * FROM cs
+		WHERE cseq=#{cseq}
+	</select>
+	
+</mapper>

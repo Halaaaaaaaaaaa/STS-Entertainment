@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	overflow: auto;
+	background-color: #34333b;
+	height: auto;
+	overflow-x: hidden;
+}
+
+/* 문의 insert */
+#cs_insert {
+	height: auto;
+	overflow: auto;
+	width: 60%;
+	margin: 80px auto;
+	background-color: rgba(110, 110, 110, 0.7);
+  	color: white;
+	border-radius: 10px;
+	padding: 35px;
+}
+
+#cs_insert h1 {
+	font-size: 22px;	
+	margin-bottom: 10px;
+}
+
+#cs_insert h3 {
+	font-size: 13px;
+	margin-bottom: 20px;
+}
+
+#cs_insert table {
+	width: 100%;
+	border-collapse: collapse;
+}
+    
+#cs_insert table td {
+	padding: 6px;
+}
+
+#csinfo {
+	margin: 60px auto 20px auto;
+}
+
+#cs_insert input[type="text"],
+#cs_insert textarea {
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+#cs_insert input[readonly] {
+  background-color: lightgray;
+  color: black;
+  border: 3px solid darkgray;
+  cursor: no-drop;
+}
+
+#cs_insert textarea {
+	height: 300px;
+}
+
+#cs_insert select {
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	font-size: 14px;
+	margin-bottom: 10px;
+	background-color: #fff;
+	appearance: none;
+	}
+
+.csbtn {
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	width:100%;
+	margin: 0 auto;
+}
+
+.csbtn:hover {
+	background-color: #45a049;
+}
+
+
+  
+
+/* 문의내역 list */
+#cs_list {
+	height: auto;
+	overflow: auto;
+	width: 60%;
+	margin: 90px auto;
+}
+
+#cs_list hr {
+	margin: 10px auto 30px auto;
+}
+
+#cslist {
+	margin-bottom: 35px;
+}
+
+#cslist tr:first-child td:first-child {
+	color: #c8c8c8;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 10px 50px 10px 10px;
+}
+
+#cslist tr:first-child td:nth-child(2) {
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#cslist tr:last-child td:nth-child(2) {
+	color: #c8c8c8;
+	font-size: 13px;
+}
+
+/* 문의내역 detail */
+#cs_detail {
+	height: auto;
+	overflow: auto;
+	width: 60%;
+	margin: 90px auto;
+}
+
+#cs_detail hr {
+	margin: 10px auto 30px auto;
+}
+
+#userDetail h3 {
+	color: #c8c8c8;
+}
+
+#userDetail table tr:last-child td {
+	padding: 40px 0;
+}
+
+#reply {
+	background-color: rgba(210, 210, 210, 0.1);
+  	color: white;
+	padding: 40px 10px;
+}
