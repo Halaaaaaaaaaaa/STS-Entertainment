@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.ezen.biz.dto.CsVO;
+import com.ezen.biz.dto.MemberVO;
 import com.ezen.biz.dto.NoticeVO;
 
 @Repository
@@ -28,6 +29,26 @@ public class CsDAO {
 	//문의사항 detail
 	public CsVO csDetail(int cseq) {
 		return mybatis.selectOne("CsMapper.csDetail", cseq);
+	}
+	
+	//문의사항 update
+	public void csUpdate(CsVO vo) {
+		mybatis.update("CsMapper.csUpdate", vo);
+	}
+	
+	//문의사항 delete
+	public void csDelete(CsVO vo) {
+		mybatis.update("CsMapper.csDelete", vo);
+	}
+	
+	//관리자 - 전체 문의 list
+	public List<CsVO> a_csList() {
+		return mybatis.selectList("CsMapper.a_csList");
+	}
+	
+	//관리자 - 문의내역 답변 
+	public void a_csReply(CsVO vo) {
+		mybatis.update("CsMapper.a_csReply",vo);
 	}
 
 }

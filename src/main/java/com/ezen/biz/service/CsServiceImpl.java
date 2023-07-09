@@ -29,6 +29,28 @@ public class CsServiceImpl implements CsService {
 		return csDao.csDetail(cseq);
 	}
 
+	@Override	//문의사항 update
+	public void csUpdate(CsVO vo) {
+		csDao.csUpdate(vo);
+	}
+
+	@Override	//문의사항 delete
+	public void csDelete(CsVO vo) {
+		csDao.csDelete(vo);
+	}
+
+	@Override	//관리자 - 전체 문의 list
+	public List<CsVO> a_csList() {
+		return csDao.a_csList();
+	}
+
+	@Override	//관리자 - 문의내역 답변 
+	public void a_csReply(CsVO vo) {
+		csDao.a_csReply(vo);
+	}
+
+	
+
 
 	
 }

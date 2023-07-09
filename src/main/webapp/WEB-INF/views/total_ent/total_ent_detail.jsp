@@ -23,6 +23,7 @@
 			<h3>&emsp;${formattedSDate} ~ ${formattedEDate}&emsp;|&emsp;${total_ent.place}</h3><br>
 			<hr>
 		</div>
+		
 		<div class="thdetail_info">
 			<div>
 				<c:if test="${total_ent.category ==1}"><img id="pimg" src="img/concert/${total_ent.pimg}.jpg"></c:if>
@@ -85,11 +86,16 @@
 							<button class="outline" onclick="booking()">예약</button>
 						</td>
 					</tr>
-				</table>
-					
-					
+				</table>	
 			</div>
 		</div>
+		
+		<div class="csLogo">
+			<a href="cs_insertF" class="csLogo_btn">
+				<img id="csCircle" src="img/csLogo.png">
+			</a>
+		</div>
+		
 		<input type="hidden" value="${membervo.id}" id="id">
 		<input type="hidden" value="${total_ent.tseq}" id="tseq">
 		<input type="hidden" id="sdate" value="${formattedSDate}">

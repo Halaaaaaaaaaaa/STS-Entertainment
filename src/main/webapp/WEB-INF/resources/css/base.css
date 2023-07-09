@@ -44,8 +44,7 @@ header {
 }
 
 .headerlogo {
-	margin: 30px 0 20px 120px;
-	width: 400px;
+	margin: 34px 0 20px 95px;
 }
 
 #headerlogo {
@@ -54,8 +53,7 @@ header {
 
 #navbarSupportedContent {
 	display: flex;
-	justify-content: right;
-	margin: 50px 0 0 600px;
+	margin: 50px 20px 20px auto;
 }
 
 li {

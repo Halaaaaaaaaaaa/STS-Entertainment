@@ -16,8 +16,8 @@ body {
 	overflow-x: hidden;
 }
 
-/* 문의 insert */
-#cs_insert {
+/* 문의 insert & update */
+#cs_insert, #cs_update {
 	height: auto;
 	overflow: auto;
 	width: 60%;
@@ -28,22 +28,22 @@ body {
 	padding: 35px;
 }
 
-#cs_insert h1 {
+#cs_insert h1, #cs_update h1 {
 	font-size: 22px;	
 	margin-bottom: 10px;
 }
 
-#cs_insert h3 {
+#cs_insert h3, #cs_update h3 {
 	font-size: 13px;
 	margin-bottom: 20px;
 }
 
-#cs_insert table {
+#cs_insert table, #cs_update table {
 	width: 100%;
 	border-collapse: collapse;
 }
     
-#cs_insert table td {
+#cs_insert table td, #cs_update table td {
 	padding: 6px;
 }
 
@@ -52,7 +52,9 @@ body {
 }
 
 #cs_insert input[type="text"],
-#cs_insert textarea {
+#cs_insert textarea,
+#cs_update input[type="text"],
+#cs_update textarea {
 	width: 100%;
 	padding: 10px;
 	border-radius: 5px;
@@ -62,18 +64,22 @@ body {
 	margin-bottom: 10px;
 }
 
-#cs_insert input[readonly] {
+#cs_insert input[readonly],
+#cs_update input[readonly] {
   background-color: lightgray;
   color: black;
   border: 3px solid darkgray;
   cursor: no-drop;
 }
 
-#cs_insert textarea {
+#cs_insert textarea,
+#cs_update textarea {
 	height: 300px;
+	white-space: pre-line;
 }
 
-#cs_insert select {
+#cs_insert select,
+#cs_update select {
 	width: 100%;
 	padding: 10px;
 	border-radius: 5px;
@@ -105,10 +111,9 @@ body {
 }
 
 
-  
-
 /* 문의내역 list */
 #cs_list {
+	min-height: 400px;
 	height: auto;
 	overflow: auto;
 	width: 60%;
@@ -153,16 +158,65 @@ body {
 	margin: 10px auto 30px auto;
 }
 
+#userDetail h2 {
+	margin-bottom: 10px;
+}
+
 #userDetail h3 {
 	color: #c8c8c8;
 }
 
 #userDetail table tr:last-child td {
 	padding: 40px 0;
+	white-space: pre-line;
 }
 
 #reply {
 	background-color: rgba(210, 210, 210, 0.1);
   	color: white;
 	padding: 40px 10px;
+	margin-bottom: 50px;
+	white-space: pre-line;
+}
+
+#replyText {
+	margin: -90px 10px 0 10px;
+}
+
+.btn_update {
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	width:200px;
+	margin: 0 auto;	
+}
+
+.btn_update:hover {
+	background-color: #45a049;
+}
+
+.btn_delete {
+	background-color: #787878;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	width:200px;
+	margin: 0 auto;		
+}
+
+.btn_delete:hover {
+	background-color: #646464;
 }

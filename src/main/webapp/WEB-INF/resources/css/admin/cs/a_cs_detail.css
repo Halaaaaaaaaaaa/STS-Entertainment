@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+#csDetailText {
+	font-size: 22px;
+	font-weight: bold;
+	margin: 15px 10px;
+}
+
+.memberInfo {
+	width: 50%;
+	border-collapse: collapse;
+	margin: 15px auto 35px 10px;
+}
+
+.csInfo, .replyInfo {
+	width: 90%;
+	border-collapse: collapse;
+	margin: 15px auto 35px 10px;
+}
+
+.replyInfo textarea {
+	width: 100%;
+	height: 450px;
+	margin: -90px auto -40px auto;
+}
+
+.memberInfo td,
+.csInfo td,
+.replyInfo td {
+	padding: 15px;
+	border-bottom: 1px solid #ccc;
+}
+
+.csInfo tr:last-child td:last-child,
+.replyInfo tr:last-child td:last-child {
+	white-space: pre-line;
+}
+
+.memberInfo td:first-child,
+.csInfo td:first-child,
+.memberInfo td:nth-child(3), 
+.csInfo td:nth-child(3),
+.replyInfo td:first-child {
+	font-weight: bold;
+	width: 100px;
+	background-color: #f2f2f2;
+}
+
+.memberInfo td:hover,
+.csInfo td:hover,
+.replyInfo td:hover {
+	background-color: #e6e6e6;
+	transition: background-color 0.3s ease-in-out;
+}

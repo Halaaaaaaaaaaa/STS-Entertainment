@@ -5,8 +5,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +21,6 @@ import com.ezen.biz.dto.BookingVO;
 import com.ezen.biz.dto.Booking_Total_entVO;
 import com.ezen.biz.dto.CsVO;
 import com.ezen.biz.dto.MemberVO;
-import com.ezen.biz.dto.NoticeVO;
 import com.ezen.biz.dto.ReviewVO;
 import com.ezen.biz.dto.Review_Total_entVO;
 import com.ezen.biz.service.BookingService;
@@ -34,8 +31,6 @@ import com.ezen.biz.service.ReviewService;
 @Controller
 @SessionAttributes("loginUser")
 public class MemberController {
-	
-	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 
 	@Autowired
 	private MemberService memberService;
@@ -451,6 +446,62 @@ public class MemberController {
 		model.addAttribute("cs", cs);
 		
 		return "cs/cs_detail";
+	}
+	
+	//문의사항 수정 form
+	@GetMapping("/cs_updateF")
+	public String cs_updateF(HttpSession session, CsVO csvo, Model model) {
+		MemberVO membervo = (MemberVO) session.getAttribute("loginUser");
+		
+		if (membervo == null) {
+			return "member/session_fail";
+		} 
+		
+		CsVO cs = csService.csDetail(csvo.getCseq());
+		
+		model.addAttribute("cs", cs);
+		
+		return "cs/cs_updateF";
+	}
+	
+	//문의사항 수정 action
+	@PostMapping("/cs_update")
+	public String cs_update(HttpSession session, CsVO csvo, Model model) {
+		MemberVO membervo = (MemberVO) session.getAttribute("loginUser");
+		
+		if (membervo == null) {
+			return "member/session_fail";
+		} 
+		
+		csService.csUpdate(csvo);
+		
+		return "redirect:cs_detail?cseq=" + csvo.getCseq();
+	}
+	
+	//문의사항 삭제
+	@ResponseBody
+	@PostMapping(value = "/cs_delete", produces = "application/text; charset=utf8")
+	public String cs_delete(CsVO csvo, HttpSession session, MemberVO vo) {
+
+		try {
+			MemberVO membervo = (MemberVO) session.getAttribute("loginUser");
+			
+			if (membervo == null) {
+				return "member/session_fail";
+			} 
+
+			String message = "";
+			if (membervo.getPassword().equals(vo.getPassword())) {
+				csService.csDelete(csvo);
+				message = "<script>alert('삭제되었습니다.');location.href='mypage';</script>";
+				return message;
+			} else {
+				return "fail";
+			}
+
+		} catch (NullPointerException e) {
+			return "<script>alert('로그인 후 이용해주세요.');location.href='login_form';</script>";
+		}
 	}
 
 }

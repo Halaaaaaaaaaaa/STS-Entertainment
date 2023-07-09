@@ -11,12 +11,14 @@
 <link rel="shortcut icon" href="img/favicon.png">
 <link rel="stylesheet" type="text/css" href="css/member/cs.css" />
 <script type="text/javascript" src="js/member/cs.js"></script>
-
-
-
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 	<div id="cs_detail">
+		<input type="hidden" id="cseq" value="${cs.cseq}">
+		<input type="hidden" id="cstatus" value="${cs.cstatus}">
+		<input type="hidden" id="cregdate" value="${cs.cregdate}">
+		<input type="hidden" id="reply" value="${cs.reply}">
 		<h2>1 : 1 문의 내역</h2>
 		<hr>
 		<div id="userDetail">
@@ -36,17 +38,27 @@
 		<div id="reply">
 			<c:choose>
 				<c:when test="${cs.reply == null}">
-					등록된 답변이 없습니다.
+					<h3>등록된 답변이 없습니다.</h3>
 				</c:when>
 				<c:otherwise>
-					<h2>답변 드립니다.</h2>
-					${cs.reply}
+					<div id="replyText">
+						<h2>답변 드립니다.</h2>
+						${cs.reply}
+					</div>
 				</c:otherwise>
 			</c:choose>
 		</div>	
 		
+		<div align="center">
+			<button type="button" onclick="location.href='cs_updateF?cseq=${cs.cseq}'" class="btn_update">수정</button>&emsp;&emsp;
+			<button type="button" onclick="cs_delete()" class="btn_delete">삭제</button>
+		</div>
+		
 	</div>
-
+	<script src="js/member/cs.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	
 	<div class="footer">
 	    <%@ include file="../footer.jsp" %>
 	</div>	

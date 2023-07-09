@@ -24,14 +24,16 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.ezen.biz.dto.AdminVO;
 import com.ezen.biz.dto.BookingVO;
-import com.ezen.biz.dto.Total_entVO;
+import com.ezen.biz.dto.Booking_Total_entVO;
+import com.ezen.biz.dto.CsVO;
 import com.ezen.biz.dto.MemberVO;
 import com.ezen.biz.dto.NoticeVO;
 import com.ezen.biz.dto.ReviewVO;
-import com.ezen.biz.dto.Booking_Total_entVO;
 import com.ezen.biz.dto.Review_Total_entVO;
+import com.ezen.biz.dto.Total_entVO;
 import com.ezen.biz.service.AdminService;
 import com.ezen.biz.service.BookingService;
+import com.ezen.biz.service.CsService;
 import com.ezen.biz.service.MemberService;
 import com.ezen.biz.service.NoticeService;
 import com.ezen.biz.service.ReviewService;
@@ -53,6 +55,8 @@ public class AdminController {
 	private NoticeService noticeService;
 	@Autowired
 	private ReviewService reviewService;
+	@Autowired
+	private CsService csService;
 
 	// 관리자 로그인 화면
 	@GetMapping("/adminlogin_form") 
@@ -731,5 +735,91 @@ public class AdminController {
 
 		return "redirect:a_review_main";
 	}
+	
+	//관리자 - 문의내역 메인
+	@GetMapping("/a_cs_main")
+	public String a_cs_main(CsVO csvo, Model model, HttpSession session) {
+		AdminVO adminvo = (AdminVO) session.getAttribute("admin");
+		
+		if (adminvo == null) {
+			return "admin/a_session_fail";
+		}
+		
+		List<CsVO> csList = csService.a_csList();
 
+		model.addAttribute("csList", csList);
+
+		return "admin/cs/a_cs_main";
+	}
+	
+	//관리자 - 문의내역 detail
+	@GetMapping("/a_cs_detail")
+	public String a_cs_detail(CsVO csvo, Model model, HttpSession session) {
+		AdminVO adminvo = (AdminVO) session.getAttribute("admin");
+		
+		if (adminvo == null) {
+			return "admin/a_session_fail";
+		}
+		
+		CsVO cs = csService.csDetail(csvo.getCseq());
+
+		model.addAttribute("csvo", cs);
+		
+		return "admin/cs/a_cs_detail";
+	}
+	
+	//관리자 - 답변 달기 페이지
+	@GetMapping("/a_cs_replyF")
+	public String a_cs_replyF(HttpSession session, CsVO csvo, Model model) {
+		AdminVO adminvo = (AdminVO) session.getAttribute("admin");
+		
+		if (adminvo == null) {
+			return "admin/a_session_fail";
+		}
+		
+		CsVO cs = csService.csDetail(csvo.getCseq());
+		model.addAttribute("csvo", cs);
+		
+		return "admin/cs/a_cs_replyF";
+	}
+	
+	//관리자 - 답변 달기 처리
+	@PostMapping("/a_cs_replyA")
+	public String a_cs_replyA(HttpSession session, CsVO csvo, Model model) {
+		AdminVO adminvo = (AdminVO) session.getAttribute("admin");
+		
+		if (adminvo == null) {
+			return "admin/a_session_fail";
+		}
+		
+		csService.a_csReply(csvo);
+		
+		return "redirect:a_cs_detail?cseq=" + csvo.getCseq();
+	}
+	
+	//관리자 - 문의사항 삭제
+	@ResponseBody
+	@PostMapping(value = "/a_cs_delete", produces = "application/text; charset=utf8")
+	public String cs_delete(CsVO csvo, HttpSession session, AdminVO adminvo) {
+
+		try {
+			AdminVO vo = (AdminVO) session.getAttribute("admin");
+				
+			if (vo == null) {
+				return "admin/session_fail";
+			} 
+
+			String message = "";
+			if (vo.getA_password().equals(adminvo.getA_password())) {
+				csService.csDelete(csvo);
+				message = "<script>alert('삭제되었습니다.');location.href='a_cs_main';</script>";
+				return message;
+			} else {
+				return "fail";
+			}
+
+		} catch (NullPointerException e) {
+			return "<script>alert('로그인 후 이용해주세요.');location.href='login_form';</script>";
+		}
+	}
 }

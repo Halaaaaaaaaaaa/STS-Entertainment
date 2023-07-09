@@ -28,6 +28,13 @@
 		<div class="slide-buttons"></div>
 	</div>
 	
+	<div class="csLogo">
+		<a href="cs_insertF" class="csLogo_btn">
+			<img id="csCircle" src="img/csLogo.png">
+		</a>
+	</div>
+	
+	
 	<section style="width: 100%;">
 		<div class="pick">
 			<h1>STS's PICK</h1>

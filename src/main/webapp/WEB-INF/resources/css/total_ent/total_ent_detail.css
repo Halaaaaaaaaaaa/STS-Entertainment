@@ -14,6 +14,21 @@ body {
 	overflow-x: hidden;
 }
 
+.csLogo {
+	position: fixed;
+	top: 130px;
+	z-index: 10;
+}
+
+.csLogo {
+	left: 90%;
+}
+
+#csCircle {
+	width: 130px;
+	height: 130px;
+}
+
 .thdetail {
 	overflow: auto;
 }
@@ -136,6 +151,17 @@ p { font-family: Helvetica, Arial, sans-serif;}
   margin-top: 0;
 }
 
+.csLogo {
+	position: fixed;
+	top: 130px;
+	z-index: 10;
+	left: 90%;
+}
+
+#csCircle {
+	width: 110px;
+	height: 110px;
+}
 
 /* datepicker */
 #datePicker {

@@ -4,7 +4,7 @@
 
 	<!-- 고객센터 문의 작성  -->
 	<insert id="insertCS">
-		INSERT INTO cs
+		INSERT INTO cs(cseq, id, name, email, coption, ctitle, ccontent, cstatus, cregdate)
 		VALUES (cseq.NEXTVAL, #{id}, #{name}, #{email}, #{coption}, #{ctitle}, #{ccontent}, '답변대기', sysdate)
 	</insert>
 	
@@ -12,13 +12,37 @@
 	<select id="csList" resultType="Cs">
 		SELECT * FROM cs
 		WHERE id=#{id}
-		ORDER BY cseq
+		ORDER BY cseq DESC
 	</select>
 	
-	<!-- 문의사항 list -->
+	<!-- 문의사항 detail -->
 	<select id="csDetail" resultType="Cs">
 		SELECT * FROM cs
 		WHERE cseq=#{cseq}
 	</select>
+	
+	<!-- 문의사항 수정 -->
+	<update id="csUpdate">
+		UPDATE cs SET email=#{email}, coption=#{coption}, ctitle=#{ctitle}, ccontent=#{ccontent}
+		WHERE cseq=#{cseq}
+	</update>
+	
+	<!-- 문의사항 삭제 -->
+	<delete id="csDelete">
+		DELETE FROM cs
+		WHERE cseq=#{cseq}
+	</delete>
+	
+	<!-- 관리자_전체 문의 list -->
+	<select id="a_csList" resultType="Cs">
+		SELECT * FROM cs
+		ORDER BY cregdate DESC
+	</select>
+	
+	<!-- 관리자-문의내역 답변 -->
+	<update id="a_csReply">
+		UPDATE cs SET reply=#{reply}, cstatus='답변완료'
+		WHERE cseq=#{cseq}
+	</update>
 	
 </mapper>

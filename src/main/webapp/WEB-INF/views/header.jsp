@@ -82,7 +82,7 @@
             	</li>
 			</ul>
 			
-			<div class="formm">
+			<div class="formm" align="right">
 				<input class="form-control" type="search" placeholder="Search"
 					aria-label="Search">
 				<button class="btn" type="submit">

@@ -14,5 +14,17 @@ public interface CsService {
 	
 	//문의사항 detail
 	CsVO csDetail(int cseq);
+	
+	//문의사항 update
+	void csUpdate(CsVO vo);
+	
+	//문의사항 delete
+	void csDelete(CsVO vo);
+	
+	//관리자 - 전체 문의 list
+	List<CsVO> a_csList();
+	
+	//관리자 - 문의내역 답변 
+	void a_csReply(CsVO vo);
 		
 }

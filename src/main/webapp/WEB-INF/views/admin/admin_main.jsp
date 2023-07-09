@@ -11,7 +11,6 @@
 <meta name="keywords" content="" />
 <meta name="author" content="Codrops" />
 <link rel="shortcut icon" href="img/favicon.png">
-<!-- <link rel="stylesheet" type="text/css" href="css/default.css" /> -->
 <link rel="stylesheet" type="text/css" href="css/admin/admin_main.css" />
 <script src="js/admin/admin_main.js"></script>
 </head>
@@ -58,6 +57,15 @@
 					<figcaption>
 						<h3>REVIEW</h3>
 						<span>후기 목록</span> <a href="a_review_main">바로 이동</a>
+					</figcaption>
+				</figure>
+			</li>
+			<li>
+				<figure>
+					<img src="img/admin/CS.png" alt="img05">
+					<figcaption>
+						<h3>C/S</h3>
+						<span>문의 목록</span> <a href="a_cs_main">바로 이동</a>
 					</figcaption>
 				</figure>
 			</li>
