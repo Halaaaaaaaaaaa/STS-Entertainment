@@ -173,12 +173,12 @@ CREATE SEQUENCE bseq
        START WITH 1
        MINVALUE 1;
 
-
 --후기 시퀀스     
 CREATE SEQUENCE rseq
        INCREMENT BY 1
        START WITH 1
        MINVALUE 1;
+       
 --공연 시퀀스       
 CREATE SEQUENCE tseq
        INCREMENT BY 1

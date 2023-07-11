@@ -14,8 +14,8 @@
 <script type="text/javascript">
 const naverLogin = new naver.LoginWithNaverId(
         {
-            clientId: "IK04q9z9rJMeoi3tE_bf",
-            callbackUrl: "http://192.168.0.70:8506/biz/naverlogin"
+            clientId: "zPrIuFf0AEl2dvfL_yG7",
+            callbackUrl: "http://localhost:8506/biz/naverlogin"
         }
     );
 naverLogin.init();

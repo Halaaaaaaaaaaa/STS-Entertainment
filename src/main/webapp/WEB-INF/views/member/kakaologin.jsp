@@ -39,11 +39,11 @@ $.ajax({
 	  },
 	  success: function(response) {
 		  Kakao.Auth.setAccessToken(response.access_token);
+		  
 	    Kakao.API.request({
 	    	  url: '/v2/user/me',
 	    	})
 	    	  .then(function(response) {
-	    		  
 	    		  var id = response.id;
 	    		  var name = response.kakao_account.name;
 	    		  var email = response.kakao_account.email;

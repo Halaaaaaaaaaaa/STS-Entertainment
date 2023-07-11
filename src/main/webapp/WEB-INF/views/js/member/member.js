@@ -296,9 +296,10 @@ function idok() {
 	self.close();
 }
 
+//네이버 로그인
 const naverLogin = new naver.LoginWithNaverId({
-	clientId : "IK04q9z9rJMeoi3tE_bf",
-	callbackUrl : "http://192.168.0.70:8506/biz/naverlogin",
+	clientId : "zPrIuFf0AEl2dvfL_yG7",
+	callbackUrl : "http://localhost:8506/biz/naverlogin",
 	loginButton : {
 		color : "green",
 		type : 3,
@@ -306,6 +307,7 @@ const naverLogin = new naver.LoginWithNaverId({
 		width : 120
 	}
 });
+
 naverLogin.init();
 
 $(document).on("click", "#naverLogin", function() {
@@ -313,6 +315,7 @@ $(document).on("click", "#naverLogin", function() {
 	naverLogin.click();
 });
 
+//카카오 로그인
 Kakao.init('e6642bc88fd411b12f3c678d2f563941'); // 사용하려는 앱의 JavaScript 키 입력
 
 function loginWithKakao() {
