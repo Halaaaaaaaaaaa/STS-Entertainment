@@ -1,4 +1,4 @@
-# STS_ent
+# STS Entertainment
 ✨ A Performance Booking Platform. Through this platform, users can easily reserve a variety of shows, including exhibitions, plays, and concerts. ✨ <br><br> 
 
 
