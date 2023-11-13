@@ -20,7 +20,7 @@ Spring Framework를 사용하여 팀 프로젝트로 진행한 공연 예매 프
 
 
 ## ERD
-<img src="D:\99. backup\ezski erd.jpg" alt="" />
+<img src="D:\99. backup\ezski erd.png" alt="" />
 
 
 ## Tech Stack 
