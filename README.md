@@ -20,7 +20,7 @@ Spring Framework를 사용하여 팀 프로젝트로 진행한 공연 예매 프
 
 
 ## ERD
-![ezski erd](https://github.com/Halaaaaaaaaaaa/STS-Entertainment/assets/122586230/60df2cf7-9fcf-4df3-ae43-71db75d80581) <br><br>
+<img src="https://github.com/Halaaaaaaaaaaa/STS-Entertainment/assets/122586230/60df2cf7-9fcf-4df3-ae43-71db75d80581" width="500px" height="500px"> <br><br>
 
 
 ## Tech Stack 
