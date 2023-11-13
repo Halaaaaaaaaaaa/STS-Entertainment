@@ -20,7 +20,7 @@ Spring Framework를 사용하여 팀 프로젝트로 진행한 공연 예매 프
 
 
 ## ERD
-<img src="https://www.notion.so/hyonigram/2nd-Project-EZSKI-58e62fb301a44dd9bd2891364a47566f?pvs=4#84c439867b374e699f9440eed5176b19">
+<img src="https://www.notion.so/hyonigram/2nd-Project-EZSKI-58e62fb301a44dd9bd2891364a47566f?pvs=4#84c439867b374e699f9440eed5176b19" width="300px" height="300px">
 
 
 ## Tech Stack 
